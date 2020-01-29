@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,7 +27,3 @@ Route::get('test', function(){
     \App\Jobs\TestJob::dispatch();
     \App\Jobs\TestJob::dispatch();
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
